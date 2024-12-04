@@ -1,0 +1,30 @@
+.search-input {
+    width: 400px; /* Ajusta el ancho según tus necesidades */
+    font-size: 16px; /* Ajusta el tamaño de fuente */
+}
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea el contenido a la derecha */
+}
+
+.text-end {
+  margin-bottom: 2rem; /* Ajusta el margen según sea necesario */
+}
+
+table {
+  width: 100%; /* Asegúrate de que la tabla ocupe todo el ancho disponible */
+  border-collapse: collapse; /* Para un mejor estilo visual */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Estilo de borde */
+  padding: 8px; /* Espaciado dentro de las celdas */
+  text-align: left; /* Alineación del texto */
+}
+
+.large-button {
+    padding: 15px 27px; /* Aumenta el padding para hacerlo más grande */
+    font-size: 19px; /* Aumenta el tamaño de la fuente */
+    min-width: 180px; /* Establece un ancho mínimo para el botón */
+  }

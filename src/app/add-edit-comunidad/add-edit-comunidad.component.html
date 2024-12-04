@@ -1,0 +1,53 @@
+<h2 class="mb-4 text-center">
+  {{ comunidadId ? 'Actualizar Comunidad' : 'Agregar Nueva Comunidad' }}
+</h2>
+<!--agregar condicional-->
+<mat-card class="form-card">
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="createOrUpdate()">
+
+      <!-- Campo de Nombre -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Nombre de la Comunidad</mat-label>
+        <input matInput placeholder="Ej: Comunidad A" formControlName="nam_m" required>
+        <mat-icon matSuffix>location_city</mat-icon>
+        <mat-error *ngIf="form.get('nam_m')?.hasError('required')">
+          El nombre es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Campo de Coordenadas X -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Coordenada X</mat-label>
+        <input matInput type="number" placeholder="Coordenada X" formControlName="x" required>
+        <mat-icon matSuffix>place</mat-icon>
+        <mat-error *ngIf="form.get('x')?.hasError('required')">
+          La coordenada x es obligatoria
+        </mat-error>
+      </mat-form-field>
+      <!-- Campo de Coordenadas Y -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Coordenada Y</mat-label>
+        <input matInput type="number" placeholder="Coordenada Y" formControlName="y" required>
+        <mat-icon matSuffix>place</mat-icon>
+        <mat-error *ngIf="form.get('y')?.hasError('required')">
+          La coordenada Y es obligatoria
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Mapa para Seleccionar Coordenadas -->
+      <div id="map" style="height: 300px; margin-top: 20px;"></div>
+
+
+      <!-- Botones -->
+      <div class="button-group text-end">
+        <button mat-stroked-button color="warn" type="button" routerLink="/">
+          Cancelar
+        </button>
+        <button mat-raised-button color="primary" class="ms-2" type="submit">
+          {{ comunidadId? 'Actualizar Comunidad' : 'Crear Comunidad' }}
+        </button>        
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
